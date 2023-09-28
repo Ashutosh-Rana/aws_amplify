@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
         break;
       case AuthSignInStep.done:
         safePrint('Sign in is complete');
-        Navigator.pushNamed(context, "/home");
+        Navigator.pushNamed(context, "/welcome");
         break;
       default:
     }

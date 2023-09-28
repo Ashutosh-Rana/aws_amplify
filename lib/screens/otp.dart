@@ -40,7 +40,7 @@ class _OTPScreenState extends State<OTPScreen> {
         break;
       case AuthSignUpStep.done:
         safePrint('Sign up is complete');
-        Navigator.pushNamed(context, "/home");
+        Navigator.pushNamed(context, "/welcome");
         break;
     }
   }
