@@ -22,6 +22,8 @@ class _LoginState extends State<Login> {
       );
       await _handleSignInResult(result);
     } on AuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error signing in: ${e.message}')));
       safePrint('Error signing in: ${e.message}');
     }
   }

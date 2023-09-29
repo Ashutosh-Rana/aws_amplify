@@ -55,6 +55,8 @@ class _SignUpState extends State<SignUp> {
       );
       await _handleSignUpResult(result);
     } on AuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error signing up: ${e.message}')));
       safePrint('Error signing up user: ${e.message}');
     }
   }

@@ -28,6 +28,8 @@ class _OTPScreenState extends State<OTPScreen> {
       // the sign up is complete.
       await _handleSignUpResult(result);
     } on AuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error confirming user: ${e.message}')));
       safePrint('Error confirming user: ${e.message}');
     }
   }
