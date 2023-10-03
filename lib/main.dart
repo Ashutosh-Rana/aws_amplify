@@ -4,6 +4,7 @@ import 'package:amplify_demo/providers/message_provider.dart';
 import 'package:amplify_demo/providers/user_provider.dart';
 import 'package:amplify_demo/screens/home.dart';
 import 'package:amplify_demo/screens/login.dart';
+import 'package:amplify_demo/screens/messages/message_screen.dart';
 import 'package:amplify_demo/screens/signup.dart';
 import 'package:amplify_demo/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +79,8 @@ class _MyAppState extends State<MyApp> {
         "/login": (context) => Login(),
         "/signup": (context) => SignUp(),
         "/home": (context) => HomeScreen(),
-        "/welcome": (context) => WelcomeScreen()
+        "/welcome": (context) => WelcomeScreen(),
+        "/message": (context) => MessagesScreen()
       },
     );
   }

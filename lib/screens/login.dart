@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
                       hintText: "Enter Username",
                       border: OutlineInputBorder()),
                   validator: (value) {
-                    if (value!.isEmpty || !value.contains('@')) {
+                    if (value!.isEmpty) {
                       return 'Please Enter Username';
                     } else {
                       return null;
