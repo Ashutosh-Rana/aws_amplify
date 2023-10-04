@@ -1,5 +1,5 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
-import 'package:amplify_demo/screens/otp.dart';
+import 'package:amplify_demo/screens/auth/otp.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';

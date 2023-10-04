@@ -2,11 +2,13 @@ import 'package:amplify_api/amplify_api.dart';
 import 'package:amplify_demo/models/ModelProvider.dart';
 import 'package:amplify_demo/providers/message_provider.dart';
 import 'package:amplify_demo/providers/user_provider.dart';
+import 'package:amplify_demo/screens/auth/login.dart';
+import 'package:amplify_demo/screens/auth/signup.dart';
 import 'package:amplify_demo/screens/home.dart';
-import 'package:amplify_demo/screens/login.dart';
+import 'package:amplify_demo/screens/image_upload/img_upload.dart';
 import 'package:amplify_demo/screens/messages/message_screen.dart';
-import 'package:amplify_demo/screens/signup.dart';
 import 'package:amplify_demo/screens/welcome/welcome_screen.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'amplifyconfiguration.dart';
@@ -28,6 +30,7 @@ Future<void> main() async {
 }
 
 Future<void> _configureAmplify() async {
+  final storage = AmplifyStorageS3();
   try {
     // final auth = AmplifyAuthCognito();
     // await Amplify.addPlugin(auth);
@@ -36,7 +39,7 @@ Future<void> _configureAmplify() async {
     // await Amplify.configure(amplifyconfig);
     final api = AmplifyAPI(modelProvider: ModelProvider.instance);
     final auth = AmplifyAuthCognito();
-    await Amplify.addPlugins([api, auth]);
+    await Amplify.addPlugins([api, auth, storage]);
     await Amplify.configure(amplifyconfig);
     safePrint("Amplify configured successfully");
   } on Exception catch (e) {
@@ -80,7 +83,8 @@ class _MyAppState extends State<MyApp> {
         "/signup": (context) => SignUp(),
         "/home": (context) => HomeScreen(),
         "/welcome": (context) => WelcomeScreen(),
-        "/message": (context) => MessagesScreen()
+        "/message": (context) => MessagesScreen(),
+        "/upload_img":(context) => UploadScreen()
       },
     );
   }

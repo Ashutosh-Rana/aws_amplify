@@ -1,6 +1,6 @@
 import 'package:amplify_demo/constants.dart';
 import 'package:amplify_demo/providers/user_provider.dart';
-import 'package:amplify_demo/screens/login.dart';
+import 'package:amplify_demo/screens/auth/login.dart';
 import 'package:amplify_demo/screens/messages/message_screen.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 // import 'package:chat/constants.dart';
